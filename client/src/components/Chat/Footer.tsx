@@ -39,9 +39,9 @@ function Footer({ className, startupConfig }: FooterProps) {
   const mainContentParts = (
     typeof config?.customFooter === 'string'
       ? config.customFooter
-      : '[LibreChat ' +
+      : '[insinno.AI-Chat ' +
         Constants.VERSION +
-        '](https://librechat.ai) - ' +
+        '](https://www.insinno.de) - ' +
         localize('com_ui_latest_footer')
   ).split('|');
 

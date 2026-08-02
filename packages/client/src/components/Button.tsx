@@ -25,18 +25,18 @@ const buttonVariants: (
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        default: 'bg-[#FF6B00] text-white hover:bg-[#E85F00]',
         destructive:
           'bg-surface-destructive text-destructive-foreground hover:bg-surface-destructive-hover',
         outline:
           'text-text-primary border border-border-light bg-transparent hover:bg-accent hover:text-accent-foreground',
         subtle:
           'rounded-xl border border-border-light bg-transparent text-text-primary hover:bg-surface-secondary focus-visible:ring-ring-primary focus-visible:ring-offset-0',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        secondary: 'bg-[#FF6B00] text-white hover:bg-[#E85F00]',
         ghost: 'hover:bg-surface-hover hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+        link: 'text-[#FF6B00] underline-offset-4 hover:underline',
         // hardcoded text color because of WCAG contrast issues (text-white)
-        submit: 'bg-surface-submit text-white hover:bg-surface-submit-hover',
+        submit: 'bg-[#FF6B00] text-white hover:bg-[#E85F00]',
       },
       size: {
         default: 'h-10 px-4 py-2',

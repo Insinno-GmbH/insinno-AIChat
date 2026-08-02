@@ -194,7 +194,7 @@ const PeoplePickerAdminSettings = () => {
                   isLoading ||
                   (isSelectedCustomRole && (isCustomRoleLoading || isCustomRoleError))
                 }
-                className="btn rounded bg-green-500 font-bold text-white transition-all hover:bg-green-600"
+                className="btn btn-primary rounded font-bold transition-all"
               >
                 {localize('com_ui_save')}
               </button>
