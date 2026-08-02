@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const yaml = require('js-yaml');
@@ -15,6 +16,7 @@ const {
 
 const projectRoot = path.resolve(__dirname, '..', '..', '..', '..');
 const defaultConfigPath = path.resolve(projectRoot, 'librechat.yaml');
+const renderConfigPath = path.resolve(projectRoot, 'config', 'render.yaml');
 
 let i = 0;
 
@@ -22,6 +24,26 @@ const OPENROUTER_PROMPT_CACHE_DEFAULT = {
   key: 'promptCache',
   default: true,
 };
+
+function resolveConfigPath() {
+  if (process.env.CONFIG_PATH) {
+    return process.env.CONFIG_PATH;
+  }
+
+  if (fs.existsSync(defaultConfigPath)) {
+    return defaultConfigPath;
+  }
+
+  if (fs.existsSync(renderConfigPath)) {
+    i === 0 &&
+      logger.info(
+        `Using bundled Render config at ${renderConfigPath}. Set CONFIG_PATH to override this path.`,
+      );
+    return renderConfigPath;
+  }
+
+  return defaultConfigPath;
+}
 
 function includesOpenRouter(value) {
   return typeof value === 'string' && value.toLowerCase().includes(Providers.OPENROUTER);
@@ -67,8 +89,8 @@ function addOpenRouterDefaults(endpoint) {
  * @returns {Promise<TCustomConfig | null>} A promise that resolves to null or the custom config object.
  * */
 async function loadCustomConfig(printConfig = true) {
-  // Use CONFIG_PATH if set, otherwise fallback to defaultConfigPath
-  const configPath = process.env.CONFIG_PATH || defaultConfigPath;
+  // Use CONFIG_PATH when provided; otherwise fallback to default paths.
+  const configPath = resolveConfigPath();
 
   let customConfig;
 

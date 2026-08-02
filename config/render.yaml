@@ -1,0 +1,6 @@
+# Render-safe fallback config.
+# Set CONFIG_PATH to this file in Render env vars:
+# CONFIG_PATH=/app/config/render.yaml
+
+version: 1.3.13
+cache: true
