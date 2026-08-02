@@ -1,7 +1,7 @@
 # LibreChat Konfigurationsversion (Aktuellste Version)
 version: "1.3.13"
 
-# Globale Einstellungen für das Insinno-Branding
+# Globale Einstellungen fï¿½r das Insinno-Branding
 interface:
   privacyPolicy:
     externalUrl: "https://insinno.de"
@@ -10,15 +10,15 @@ interface:
     externalUrl: "https://insinno.de"
     openInNewTab: true
 
-# Kundenspezifische Benutzeroberfläche im Insinno-Stil
+# Kundenspezifische Benutzeroberflï¿½che im Insinno-Stil
 customation:
   appName: "insinno iCore AI"
   appTitle: "insinno AI Portal"
   # Offizielle Insinno Farbpalette (Orange-Akzente auf dunklem/hellem Grund)
   brandColors:
     primary: "#FF6B00"       # Das typische insinno-Orange
-    secondary: "#000000"     # Klassisch Schwarz für Schriftzüge/Header
-  # Optionale Links für das Dashboard/Hilfe-Menü
+    secondary: "#000000"     # Klassisch Schwarz fï¿½r Schriftzï¿½ge/Header
+  # Optionale Links fï¿½r das Dashboard/Hilfe-Menï¿½
   helpLink: "https://insinno.de"
 
 # Beispiel-Endpunkte (Passe diese an deine genutzten LLMs an)
@@ -34,6 +34,20 @@ endpoints:
       summarize: true
       # Icon-Zuweisung passend zum Unternehmens-Design
       iconURL: "https://insinno.de"
+  custom:
+    - name: "insinno DSGVO LLMs"
+      apiKey: "${IONOS_API_KEY}"
+      baseURL: "https://openai.inference.de-txl.ionos.com/v1/models"
+      models:
+        default:
+          - "mistralai/Mistral-Small-24B-Instruct"
+          - "Qwen/Qwen3.5-9B"
+          - "meta-llama/Meta-Llama-3.1-8B-Instruct"
+          - "meta-llama/Meta-Llama-3.1-405B-Instruct-FP8"
+          - "Qwen/Qwen3.5-397B-A17B"
+        fetch: false
+      titleConvo: true
+      summarize: true
 
 # Datei-Management-Einstellungen (Verhindert Fehler bei Uploads)
 fileConfig:
