@@ -13,9 +13,10 @@ interface:
     externalUrl: "https://insinno.de"
     openNewTab: true
 
+# Beispiel-Endpunkte (Passe diese an deine genutzten LLMs an)
 endpoints:
   custom:
-    - name: "insinno iCore Engine"
+    - name: "OpenAI"
       apiKey: "${OPENAI_API_KEY}"
       baseURL: "https://openai.com"
       models:
@@ -23,8 +24,9 @@ endpoints:
         fetch: false
       titleConvo: true
       summarize: true
+      # Icon-Zuweisung passend zum Unternehmens-Design
       iconURL: "https://insinno.de"
-    - name: "insinno DSGVO LLMs"
+    - name: "DSGVO AI"
       apiKey: "${IONOS_API_KEY}"
       baseURL: "https://openai.inference.de-txl.ionos.com/v1"
       models:
@@ -34,6 +36,16 @@ endpoints:
           - "meta-llama/Meta-Llama-3.1-8B-Instruct"
           - "meta-llama/Meta-Llama-3.1-405B-Instruct-FP8"
           - "Qwen/Qwen3.5-397B-A17B"
+        fetch: false
+      titleConvo: true
+      summarize: true
+    - name: "AI Text2Image"
+      apiKey: "${IONOS_API_KEY}"
+      baseURL: "https://openai.inference.de-txl.ionos.com/v1"
+      models:
+        default:
+          - "black-forest-labs/FLUX.1-schnell"
+          - "black-forest-labs/FLUX.2-klein-4B"
         fetch: false
       titleConvo: true
       summarize: true
