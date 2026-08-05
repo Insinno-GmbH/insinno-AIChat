@@ -16,29 +16,7 @@ interface:
 # Beispiel-Endpunkte (Passe diese an deine genutzten LLMs an)
 endpoints:
   custom:
-    - name: "OpenAI"
-      apiKey: "${OPENAI_API_KEY}"
-      baseURL: "https://openai.com"
-      models:
-        default: ["gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"]
-        fetch: false
-      titleConvo: true
-      summarize: true
-      # Icon-Zuweisung passend zum Unternehmens-Design
-      iconURL: "https://insinno.de"
-    - name: "Secure AI (DE-hosted)"
-      apiKey: "${IONOS_API_KEY}"
-      baseURL: "https://openai.inference.de-txl.ionos.com/v1"
-      models:
-        default:
-          - "mistralai/Mistral-Small-24B-Instruct"
-          - "Qwen/Qwen3.5-9B"
-          - "meta-llama/Meta-Llama-3.1-8B-Instruct"
-          - "meta-llama/Meta-Llama-3.1-405B-Instruct-FP8"
-          - "Qwen/Qwen3.5-397B-A17B"
-        fetch: false
-      titleConvo: true
-      summarize: true
+    
     
 fileConfig:
   endpoints:
