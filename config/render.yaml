@@ -14,8 +14,8 @@ interface:
     openNewTab: true
 
 # Beispiel-Endpunkte (Passe diese an deine genutzten LLMs an)
-endpoints:
-  custom:
+#endpoints:
+#  custom:
     
     
 fileConfig:
