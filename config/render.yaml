@@ -41,7 +41,7 @@ endpoints:
       summarize: true
     - name: "AI Text2Image"
       apiKey: "${IONOS_API_KEY}"
-      baseURL: "https://openai.inference.de-txl.ionos.com/v1"
+      baseURL: "https://openai.inference.de-txl.ionos.com/v1/images/generations"
       models:
         default:
           - "black-forest-labs/FLUX.1-schnell"
